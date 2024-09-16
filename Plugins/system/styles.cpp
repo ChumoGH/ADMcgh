@@ -35,8 +35,9 @@ menu_func(){
 
 selection_fun () {
 local selection="null"
+local opc=$1
 local range
-for((i=0; i<=$1; i++)); do range[$i]="$i "; done
+for((i=0; i<=${opc}; i++)); do range[$i]="$i "; done
 while [[ ! $(echo ${range[*]}|grep -w "$selection") ]]; do
 echo -ne "\033[1;37m ► Opcion : " >&2
 read selection
