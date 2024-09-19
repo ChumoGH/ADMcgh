@@ -133,8 +133,8 @@ i=$((i + 1))
 echo -e "\033[1;31m [ SYSTEM ] \033[1;37m"
 #read -p "Introduzca la contraseña manualmente o pulse ENTER: " pass
 #[[ -z "$pass" ]] && pass="$user"
-[[ $(echo $limite) = "HWID" ]] && echo "$user:$user:HWID:$sl:$NameTKID" >> $bc && echo -e "\033[1;37mUser $NameTKID \033[0;35m [\033[0;36m$limite\033[0;35m]\033[0;31m Backup [\033[1;31mOK\033[1;37m] con $sl DIAS\033[0m"
-[[ $(echo $limite) = "TOKEN" ]] && echo "$user:$passTK:TOKEN:$sl:$NameTKID" >> $bc && echo -e "\033[1;37mUser $NameTKID \033[0;35m [\033[0;36m$limite\033[0;35m]\033[0;31m Backup [\033[1;31mOK\033[1;37m] con $sl DIAS\033[0m"
+[[ $(echo $limite) = @(hwid|HWID) ]] && echo "$user:$user:HWID:$sl:$NameTKID" >> $bc && echo -e "\033[1;37mUser $NameTKID \033[0;35m [\033[0;36m$limite\033[0;35m]\033[0;31m Backup [\033[1;31mOK\033[1;37m] con $sl DIAS\033[0m"
+[[ $(echo $limite) = @(TOKEN|token) ]] && echo "$user:$passTK:TOKEN:$sl:$NameTKID" >> $bc && echo -e "\033[1;37mUser $NameTKID \033[0;35m [\033[0;36m$limite\033[0;35m]\033[0;31m Backup [\033[1;31mOK\033[1;37m] con $sl DIAS\033[0m"
 [[ "$limite" =~ ^[0-9]+$ ]] && echo "$user:$NameTKID:$limite:$sl:$NameTKID" >> $bc && echo -e "\033[1;37mUser $user \033[0;35m [\033[0;36mSSH\033[0;35m]\033[0;31m Backup [\033[1;31mOK\033[1;37m] con $sl DIAS\033[0m"
 #sleep .2s
 done
