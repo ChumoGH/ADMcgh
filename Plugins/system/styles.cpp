@@ -15,6 +15,16 @@ _check5=$9
 archivo_local="/bin/ejecutar/msg"
 archivo_remoto="https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/Plugins/system/styles.cpp"
 
+show_quit(){
+
+local option="$1"
+
+for((num=1; num<=$option; num++)); do
+	tput cuu1 && tput dl1
+done	
+
+}
+
 
 menu_func(){
   local options=${#@}
