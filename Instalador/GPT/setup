@@ -120,7 +120,7 @@ password required pam_permit.so' >/etc/pam.d/common-password && chmod +x /etc/pa
   echo ""
   msgi -bar2
   fun_ip() {
-    TUIP=$(wget -qO- ifconfig.me)
+    TUIP=$(curl -sSL ifconfig.me)
     echo "$TUIP" >/root/.ssh/authrized_key.reg
     echo -e "\033[1;97m ESTA ES TU IP PUBLICA? \033[32m$TUIP"
     msgi -bar2
@@ -255,7 +255,7 @@ Install_key() {
     echo -e "\033[1;32m————————————————————————————————————————————————————"
     figlet -w 85 -f smslant "         SCRIPT
          LATAM  " | lolcat
-    msgi -ama "          [ ----- \033[1;97m 🐲 By @Kalix1 🐲\033[1;33m ----- ]"
+    msgi -ama "          [ ----- \033[1;97m 🐲 By @ChumoGH 🐲\033[1;33m ----- ]"
     echo -e "\033[1;32m————————————————————————————————————————————————————"
     pv="$(echo es)"
     [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
@@ -314,7 +314,7 @@ Install_key() {
       if [[ -e /tmp/IP ]]; then
         echo "$(cat /tmp/IP)"
       else
-        MEU_IP=$(wget -qO- ifconfig.me)
+        MEU_IP=$(curl -sSL ifconfig.me)
         echo "$MEU_IP" >/tmp/IP
       fi
     }
