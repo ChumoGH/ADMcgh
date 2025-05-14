@@ -245,12 +245,39 @@ else
            -w net.ipv6.conf.lo.disable_ipv6=1 &> /dev/null
 fi
 
-hash_remoto=$(curl -s "$archivo_remoto" | md5sum | awk '{print $1}')
-hash_local=$(md5sum "$archivo_local" 2>/dev/null | awk '{print $1}')
+max_intentos=3
+intento_actual=1
 
-if [ "$hash_local" != "$hash_remoto" ]; then
-    curl -o "$archivo_local" "$archivo_remoto" &> /dev/null
-fi
+
+verificar_descarga() {
+    hash_remoto=$(curl -sSL "$archivo_remoto" | md5sum | awk '{print $1}')
+    hash_local=$(md5sum "$archivo_local" 2>/dev/null | awk '{print $1}')
+    
+    if [ "$hash_local" != "$hash_remoto" ]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+# Intento de descarga
+while [ $intento_actual -le $max_intentos ]; do
+    echo "Intento $intento_actual de descarga..."
+    
+    # Descargar el archivo
+    if curl -L -o "$archivo_local" "$archivo_remoto" --retry 3 --retry-delay 5; then
+        if verificar_descarga; then
+            exit 0
+        else
+            rm -f "$archivo_local" 2>/dev/null
+        fi
+    else
+        echo "Error en la descarga del archivo."
+    fi
+    
+    intento_actual=$((intento_actual + 1))
+    sleep 5
+done
 
 cor[0]="\033[0m"
 cor[1]="\033[1;34m"
