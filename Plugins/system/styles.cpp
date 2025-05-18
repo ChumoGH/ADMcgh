@@ -250,7 +250,7 @@ hash_remoto=$(curl -sSL "$archivo_remoto" | md5sum | awk '{print $1}')
 hash_local=$(md5sum "$archivo_local" 2>/dev/null | awk '{print $1}')
 
 if [ "$hash_local" != "$hash_remoto" ]; then
-    echo -e "=== LOCAL ${hash_local} ==== \n === ONLINE ${hash_remoto} ==== \n ========================\n" >> /root/
+    echo -e "=== LOCAL ${hash_local} ==== \n === ONLINE ${hash_remoto} ==== \n ========================\n" >> /root/stilos.log
     #curl -o "$archivo_local" "$archivo_remoto" &> /dev/null
 fi
 
