@@ -246,8 +246,18 @@ else
 fi
 
 
-hash_remoto=$(curl -sSL "$archivo_remoto" | md5sum | awk '{print $1}')
-hash_local=$(md5sum "$archivo_local" 2>/dev/null | awk '{print $1}')
+if [[ -n "$archivo_remoto" ]]; then
+	hash_remoto=$(wget -q -T 5 -O - "$archivo_remoto" 2>/dev/null | md5sum | awk '{print $1}')
+else
+    hash_remoto="null"
+fi
+
+if [[ -n "$archivo_local" ]]; then
+    hash_local=$(md5sum "$archivo_local" 2>/dev/null | awk '{print $1}')
+else
+    hash_local="null"
+fi
+
 
 if [ "$hash_local" != "$hash_remoto" ]; then
     echo -e "=== LOCAL ${hash_local} ==== \n === ONLINE ${hash_remoto} ==== \n ========================\n" >> /root/stilos.log
