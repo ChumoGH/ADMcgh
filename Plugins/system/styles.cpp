@@ -281,3 +281,4 @@ export -f print_center
 export -f in_opcion
 export -f del
 export -f menu_item
+export flech cOlM TOP TTini cG TTfin TTcent RRini RRfin CHeko ScT FlT BoLCC ceLL aLerT _kl1 lLaM pPIniT bOTg kL10 rAy tTfIn TtfIn tTfLe am1 rUlq h0nG lLav3 m3ssg pUn5A p1t0 nib t0gSl tRadm cOpyRig mbar2
