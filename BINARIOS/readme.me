@@ -21,3 +21,35 @@ wget [https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/x86_64/Chec
 
 # 2. Dar permisos de ejecución
 chmod +x /usr/bin/CheckApiV2ray
+
+
+# Sintaxis: CheckApiV2ray [PUERTO] [RUTA_CONFIG]
+CheckApiV2ray 909 /root/v2ray/config.json
+
+
+http://<TU_IP>:<PUERTO>/?uuid=<UUID_DEL_USUARIO>
+
+
+Ejemplo de Uso
+Si tu servidor es 144.22.43.189 y ejecutaste el script en el puerto 909:
+
+Petición:
+
+HTTP
+
+[http://144.22.43.189:909/?uuid=a29d475a-d028-4b67-817a-5d3cea7693a8](http://144.22.43.189:909/?uuid=a29d475a-d028-4b67-817a-5d3cea7693a8)
+Respuestas JSON
+✅ Usuario encontrado y fecha válida: Devuelve el número de días restantes.
+
+JSON
+
+{
+  "days": 15
+}
+❌ Usuario no encontrado, expirado o error:
+
+JSON
+
+{
+  "days": null
+}
