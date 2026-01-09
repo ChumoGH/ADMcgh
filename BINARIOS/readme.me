@@ -1,0 +1,23 @@
+# CheckApiV2ray - API de Validación de Usuarios
+
+Una herramienta ligera y eficiente para consultar la vigencia (días restantes) de usuarios V2Ray directamente desde el archivo `config.json`. Diseñada para integrarse con paneles web, bots de Telegram o sistemas de monitoreo externos.
+
+## 🚀 Características
+- **Multi-arquitectura:** Binarios disponibles para `x86_64` (Intel/AMD) y `aarch64` (ARM/Raspberry Pi).
+- **Flexible:** Permite definir puerto de escucha y ruta del archivo de configuración.
+- **Respuesta JSON:** Formato estándar para fácil integración.
+- **Modo Debug:** Visualización de peticiones en consola para depuración.
+
+---
+
+## 📥 Instalación en Linux
+
+Elige la arquitectura de tu servidor (VPS) para descargar el binario correcto.
+
+### Opción A: Arquitectura x86_64 (Estándar VPS)
+```bash
+# 1. Descargar el binario
+wget [https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/x86_64/CheckApiV2ray](https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/x86_64/CheckApiV2ray) -O /usr/bin/CheckApiV2ray
+
+# 2. Dar permisos de ejecución
+chmod +x /usr/bin/CheckApiV2ray
