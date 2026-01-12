@@ -125,6 +125,8 @@ JSON
   "message": "Usuario Activo"
 }
 ```
+<img width="832" height="278" alt="1-valid-Captura" src="https://github.com/user-attachments/assets/48cbb27e-da17-4856-a2bc-bec61a9712ea" />
+
 
 ❌ Usuario no encontrado, expirado o error:
 
@@ -138,3 +140,19 @@ JSON
   "message": "Usuario no encontrado"
 }
 ```
+<img width="870" height="296" alt="2-NO-VALID-Captura" src="https://github.com/user-attachments/assets/6ca7ff3e-2245-4d34-a7ed-0b1a36008b97" />
+
+
+❌ LINK DE API CORRIENDO SIN PARAMETROS:
+
+JSON
+```bash
+{
+  "message": "VALIDACION V2RAY CHUMOGH"
+}
+```
+<img width="466" height="214" alt="3-NO-Captura" src="https://github.com/user-attachments/assets/d8b23bfb-c045-4992-841f-12795d784276" />
+
+
+# By Henry Chumo
+**By: [ ChumoGH SCRIPTS ⃘⃤꙰✰ ](https://t.me/ChumoGH)**
