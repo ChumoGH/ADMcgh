@@ -116,7 +116,7 @@ Respuestas JSON
 ✅ Usuario encontrado y fecha válida: Devuelve el número de días restantes.
 
 JSON
-
+```bash
 {
   "name": "ChumoGH",
   "days": 100,
@@ -124,11 +124,12 @@ JSON
   "status": "active",
   "message": "Usuario Activo"
 }
+```
 
 ❌ Usuario no encontrado, expirado o error:
 
 JSON
-
+```bash
 {
   "name": null,
   "days": null,
@@ -136,3 +137,4 @@ JSON
   "status": "not_found",
   "message": "Usuario no encontrado"
 }
+```
