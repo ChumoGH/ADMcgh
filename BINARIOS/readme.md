@@ -16,9 +16,13 @@ Elige la arquitectura de tu servidor (VPS) para descargar el binario correcto.
 
 ### Opción A: Arquitectura x86_64 y ARM64 (Estándar VPS)
 
-# 1. Descargar el binario
+# 1.1. Descargar el binario PARA AMD64
 ```bash
 wget https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/x86_64/CheckApiV2ray -O /usr/bin/CheckApiV2ray
+```
+# 1.1. Descargar el binario PARA ARM64
+```bash
+wget https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/aarch64/CheckApiV2ray -O /usr/bin/CheckApiV2ray
 ```
 
 # 2. Dar permisos de ejecución
